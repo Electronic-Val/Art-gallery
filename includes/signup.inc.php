@@ -15,7 +15,7 @@ $pass = $_POST ["password"];
 $user_check = $database -> select_one("users", "username", "$username");
 $pass_check = $database -> select_one("users", "password", "$pass");
 
-//check if username if a real email
+//check if username is a real email
 if (!preg_match("/^([A-Za-z0-9-]+)@[A-Za-z0-9]+\.([A-Za-z]{2,3})$/", "$username")) {
     echo "fake e-mail address!";
     exit ();
