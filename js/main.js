@@ -7,7 +7,7 @@ function like (n) {
     window.location.href = "likes.php?a="+n;
 }
 
-//Map Api
+//Google Map Api
 window.onload = function () {
     var target = document.getElementById ('mapp');
     var coords = new google.maps.LatLng (9.0, 8.6);
