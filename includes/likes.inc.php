@@ -2,7 +2,7 @@
 //start session
 session_start();
 //include like class
-include ('classes/like.class.php');
+include ('../classes/like.class.php');
 
 //check if like was clicked
 if (isset($_GET['a'])) {

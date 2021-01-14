@@ -4,7 +4,7 @@ function goThere (n) {
 }
 // This one sends the user to the likes file
 function like (n) {
-    window.location.href = "inludes/likes.inc.php?a="+n;
+    window.location.href = "includes/likes.inc.php?a="+n;
 }
 
 //Google Map Api
