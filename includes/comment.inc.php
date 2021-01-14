@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
 
 }
 
-    //if submit was not clicked
+    //if submit was not clicked do this
 } else {
     echo "how the hell did you get here?!!";
 }
