@@ -112,7 +112,6 @@ header p {
     text-align: left;
 }
 
-.child2 {}
 
 .child img {
     width: 80%;
@@ -306,18 +305,8 @@ footer {
     #buton {
         background-color: teal;
     }
-    /*.overlay {
-    min-height: 100vh;
-    min-width: 100vw;
-    background-color: #111;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 1;
-}*/
+    
 
-    .child {}
 
     .child1 {
         text-align: left;

@@ -5,9 +5,9 @@ $user = "root";
 $pass = "";
 $database = "valpoint";
 
+//instantiate new connection 
 $conn = new mysqli($host, $user, $pass, $database);
+
+//run the connection 
 $conn;
-
-
-
 ?>

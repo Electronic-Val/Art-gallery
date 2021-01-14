@@ -78,8 +78,4 @@ VALUES ('$fname', '$gname','$desc')";
     //end of class
 }
 
-//instantiate class
-$gallery = new Filess ("localhost", "root", "", "valpoint");
-//call upload method
-$gallery->image_upload ();
 ?>

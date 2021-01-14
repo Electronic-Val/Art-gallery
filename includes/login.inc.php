@@ -25,7 +25,3 @@ if ($logged == 0) {
 
 //Close connection
 $conn->close();
-
-
-
-?>

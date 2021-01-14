@@ -1,10 +1,9 @@
 <?php
 /**
-*
-*
+This class was written to handle those database-related functions I find myself doing quite often...
 */
 
-/*Database CLASS has the following methods*/
+/*..."Database" class has the following methods*/
 //Connect
 //Insert
 //Delete
@@ -23,22 +22,24 @@ class Database
         $this->password = $pass;
         $this->database = $db;
         $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
-        //$this->conn;
     }
+    
     /*connect method*/
     function connect () {
 
         if ($this->conn) {
             echo "Suceess!!!!!";
         } else {
-            echo "erooroo";
+            echo "error!!!";
         }
     }
+    
     /*Select method(select all)*/
     function select_all($table) {
         $this->table = $table;
         $conns = $this->conn;
         $sql = $conns->query("SELECT * FROM ".$this->table.";");
+       
         while ($res = mysqli_fetch_assoc($sql)) {
             echo $res["name"];
             echo "<br>";
@@ -68,30 +69,29 @@ class Database
         $res = mysqli_query($conns, $sql);
         $row = mysqli_fetch_assoc($res);
         $pass2 = $row ['password'];
+        
+        //if the input password matches the password(case sensitive), return 1
         if (preg_match("/^".$pass2."$/", $this->password)) {
             return 1;
         } else {
 
             return 0;
-            //$row = mysqli_num_rows($res);
-
-            //return $row;
         }
 
     }
 
     function logout () {
-        #Check if submit button was clicked
+        //Check if submit button was clicked
         if (isset($_POST["submit"])) {
 
-            #Set session to an empty array thus clearing it
+            //Set session to an empty array thus clearing it
             session_start();
             $_SESSION = array();
 
-            #redirect the user to the home page
+            //redirect the user to the home page
             header("Location: ../index.php");
 
-            #logout message
+            //logout message
             $welcome = "You are now logged out!";
 
         } else {
@@ -125,9 +125,10 @@ class Database
     function select_all_index($table, $index) {
         $this->table = $table;
         $this->index = $index;
-
         $conns = $this->conn;
+        
         $sql = $conns->query("SELECT * FROM$this->table");
+        
         while ($res = mysqli_fetch_assoc($sql)) {
             echo "SELECT ONE";
             echo $res["$this->index"];
@@ -147,7 +148,10 @@ class Database
 
         $sql = "INSERT INTO ".$this->table."(name, surname, username, password)
 VALUES ('".$this->name."', '".$this->surname."', '".$this->username."','".$this->password. "')";
+        
+        //don't know if this was necessary
         $conns = $this->conn;
+        
         #Check for any error in query
         if ($conns->query($sql) === TRUE) {
             echo "New record created successfully";
@@ -165,6 +169,7 @@ VALUES ('".$this->name."', '".$this->surname."', '".$this->username."','".$this-
         $conns = $this->conn;
         $sql = "UPDATE $this->table SET $this->index='$this->value'
  WHERE $this->index='$this->old_value'";
+        
         if ($conns->query($sql) === TRUE) {
             echo "row updated!";
         } else {
@@ -205,7 +210,7 @@ VALUES ('".$this->name."', '".$this->surname."', '".$this->username."','".$this-
     //CLASS END
 }
 
-//instantiate class
+//instantiate class....pass in (in the exact order) hostname, username, password and database name.
 $database = new Database("localhost", "root", "", "valpoint");
 
 ?>

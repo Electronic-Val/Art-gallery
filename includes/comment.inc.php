@@ -1,6 +1,7 @@
 <?php
 //include db connection
 include ("conn.inc.php");
+
 //check if submit was clicked
 if (isset($_POST["submit"])) {
 
@@ -12,8 +13,10 @@ if (isset($_POST["submit"])) {
 
     //variable fire inserting comment on db
     $sql = "INSERT INTO Opinions (user, word, pic_id, pic_table) VALUES  ('".$user."', '".$comment."', '".$pic_id."', '".$pic_table."')";
+   
     //run insert query
     $comm = mysqli_query ($conn, $sql);
+   
     //check for success
     if ($comm) {
         echo "successful";

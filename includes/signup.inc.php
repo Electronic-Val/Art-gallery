@@ -34,9 +34,5 @@ if (!preg_match("/^([A-Za-z0-9-]+)@[A-Za-z0-9]+\.([A-Za-z]{2,3})$/", "$username"
 VALUES ('$name', '$sname', '$username','$pass')";
 
     $database->insert_into ("users", "$name", "$sname", "$username", "$pass");
-
-
-
 }
-
 ?>

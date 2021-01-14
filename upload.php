@@ -10,7 +10,7 @@
     <section class="upload">
 
         <h3>Upload Picture</h3>
-        <form action="classes/file_system.class.php" method="post" enctype="multipart/form-data">
+        <form action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
             <input type="file" name="pic" id="pic" />
             <input type="text" name="givenName" placeholder="name" />
             <textarea name="description" placeholder="description"></textarea>
