@@ -10,6 +10,11 @@ if (isset($_POST["submit"])) {
     $comment = $_POST["comment"];
     $pic_id = $_SESSION["pic_id"];
     $pic_table = $_SESSION["table"];
+    
+    if (empty ($comment)) {
+      echo "your comment is empty!!!";
+      exit ();
+    }else {
 
     //variable fire inserting comment on db
     $sql = "INSERT INTO Opinions (user, word, pic_id, pic_table) VALUES  ('".$user."', '".$comment."', '".$pic_id."', '".$pic_table."')";
@@ -24,7 +29,7 @@ if (isset($_POST["submit"])) {
         echo "no way";
     }
 
-
+}
 
     //if submit was not clicked
 } else {
